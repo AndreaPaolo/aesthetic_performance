@@ -7,6 +7,8 @@ import { AboutComponent } from './components/landing/about/about.component';
 import { ContactComponent } from './components/landing/contact/contact.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { RegisterComponent } from './components/forms/register/register.component';
+import { SchedaComponent } from './components/user/scheda/scheda.component';
+import { ProfiloComponent } from './components/user/profilo/profilo.component';
 
 export const routes: Routes = [
   //Landing
@@ -19,6 +21,8 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   //User
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'scheda', component: SchedaComponent},
+  { path: 'profilo', component: ProfiloComponent},
   //Admin
   { path: 'admin/dashboard', component: AdminpanelComponent}
 ];

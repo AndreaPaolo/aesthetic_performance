@@ -4,16 +4,16 @@ import { UserfooterComponent } from "../../footers/userfooter/userfooter.compone
 import { RouterModule } from "@angular/router";
 
 @Component({
-    selector: 'app-dashboard',
-    standalone: true,
-    templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.css',
-    imports: [
-      UsernavComponent,
-      UserfooterComponent,
-      RouterModule
-    ]
+  selector: 'app-profilo',
+  standalone: true,
+  imports: [
+    UsernavComponent,
+    UserfooterComponent,
+    RouterModule
+  ],
+  templateUrl: './profilo.component.html',
+  styleUrl: './profilo.component.css'
 })
-export class DashboardComponent {
+export class ProfiloComponent {
 
 }
