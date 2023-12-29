@@ -38,8 +38,7 @@ public class EsercizioController {
 
     @DeleteMapping("/api/esercizio/{esercizio_id}")
     void deleteEsercizio(@PathVariable Long esercizio_id){
-         Esercizio esercizio = this.esercizioRepository.findById(esercizio_id).orElseThrow();
+        Esercizio esercizio = this.esercizioRepository.findById(esercizio_id).orElseThrow();
         this.esercizioRepository.delete(esercizio);
     }
-    
 }

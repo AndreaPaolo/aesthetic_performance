@@ -1,12 +1,8 @@
 package com.AP.Aesthetich_Performance.Progressione;
 
-import com.AP.Aesthetich_Performance.Esercizio.Esercizio;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 /**

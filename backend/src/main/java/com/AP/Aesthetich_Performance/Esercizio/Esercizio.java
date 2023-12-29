@@ -22,8 +22,10 @@ public class Esercizio {
     private String nome;
     private String descrizione;
     private String video;
+    
     @JsonIgnore
     private boolean deleted = Boolean.FALSE;
+
     @JsonIgnore
     @ManyToMany(mappedBy = "esercizi")
     private Collection<Scheda> schede;

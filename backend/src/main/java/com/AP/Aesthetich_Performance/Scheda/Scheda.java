@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
-import org.hibernate.annotations.Where;
 
 import com.AP.Aesthetich_Performance.Esercizio.Esercizio;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,9 +25,10 @@ public class Scheda {
     private @Id @GeneratedValue Long id;
     private String nome;
     private String descrizione;
+    
     @JsonIgnore
     private boolean deleted = Boolean.FALSE;
-    @JsonIgnore
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name = "scheda_esercizio",
