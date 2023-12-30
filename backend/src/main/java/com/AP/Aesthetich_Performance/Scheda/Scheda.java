@@ -25,7 +25,7 @@ public class Scheda {
     private @Id @GeneratedValue Long id;
     private String nome;
     private String descrizione;
-    
+
     @JsonIgnore
     private boolean deleted = Boolean.FALSE;
 
@@ -36,5 +36,4 @@ public class Scheda {
         inverseJoinColumns = @JoinColumn(name = "esercizio_id")
     )
     private Collection<Esercizio> esercizi;
-
 }

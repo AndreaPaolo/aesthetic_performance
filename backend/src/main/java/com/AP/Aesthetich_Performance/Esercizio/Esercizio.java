@@ -4,6 +4,7 @@ package com.AP.Aesthetich_Performance.Esercizio;
 import java.util.Collection;
 
 import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 import com.AP.Aesthetich_Performance.Scheda.Scheda;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,12 +18,13 @@ import lombok.Data;
 @Data
 @Entity
 @SQLDelete(sql="UPDATE esercizio SET deleted = true WHERE id = ?") //Soft deleting
+@SQLRestriction("deleted = false") //Ignora quelle eliminate
 public class Esercizio {
     private @Id @GeneratedValue Long id;
     private String nome;
     private String descrizione;
     private String video;
-    
+
     @JsonIgnore
     private boolean deleted = Boolean.FALSE;
 

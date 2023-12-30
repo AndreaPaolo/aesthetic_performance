@@ -8,6 +8,7 @@ public class AesthetichPerformanceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AesthetichPerformanceApplication.class, args);
+		System.out.println("Ciao");
 	}
 
 }
