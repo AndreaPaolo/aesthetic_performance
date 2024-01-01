@@ -1,0 +1,42 @@
+<div class="back-to-top"></div>
+
+<header>
+  <app-adminnav></app-adminnav>
+  <div class="container">
+    <div class="page-banner">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-6">
+          <nav aria-label="Breadcrumb">
+            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+              <li class="breadcrumb-item active"><a routerLink="/admin/dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item active"><a routerLink="/admin/scheda">Schede</a></li>
+            </ul>
+          </nav>
+          <h1 class="text-center">Aggiungi scheda</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-4">
+  <form class="contact-form py-5 px-lg-5">
+    <div class="row form-group">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <label class="text-black" for="fname">Nome scheda:</label>
+        <input id="scheda.nome" type="text" class="form-control" [(ngModel)]="scheda.nome" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-6">
+        <label class="text-black" for="lname">Descrizione:</label>
+        <textarea id="scheda.descrizione" type="text" id="lname" class="form-control" [(ngModel)]="scheda.descrizione" [ngModelOptions]="{standalone: true}" [value]="scheda.descrizione"></textarea>
+      </div>
+    </div>
+    <div class="row form-group mt-4">
+      <div class="col-md-12">
+        <input type="submit" value="Modifica" class="btn btn-primary" (click)="aggiungi()">
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-adminfooter></app-adminfooter>

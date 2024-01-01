@@ -9,6 +9,14 @@ import { LoginComponent } from './components/forms/login/login.component';
 import { RegisterComponent } from './components/forms/register/register.component';
 import { SchedaComponent } from './components/user/scheda/scheda.component';
 import { ProfiloComponent } from './components/user/profilo/profilo.component';
+import { AdminesercizioComponent } from './components/admin/adminesercizio/adminesercizio.component';
+
+//Scheda
+import { ViewSchedaComponent } from "./components/admin/scheda/view-scheda/view-scheda.component";
+import { CreateSchedaComponent } from "./components/admin/scheda/create-scheda/create-scheda.component";
+import { EditSchedaComponent } from "./components/admin/scheda/edit-scheda/edit-scheda.component";
+
+
 
 export const routes: Routes = [
   //Landing
@@ -24,5 +32,10 @@ export const routes: Routes = [
   { path: 'scheda', component: SchedaComponent},
   { path: 'profilo', component: ProfiloComponent},
   //Admin
-  { path: 'admin/dashboard', component: AdminpanelComponent}
+  { path: 'admin/dashboard', component: AdminpanelComponent},
+  { path: 'admin/esercizio', component: AdminesercizioComponent},
+    //Scheda
+    { path: 'admin/scheda', component: ViewSchedaComponent},
+    { path: 'admin/scheda/create', component: CreateSchedaComponent},
+    { path: 'admin/scheda/edit/:scheda_id', component: EditSchedaComponent}
 ];
