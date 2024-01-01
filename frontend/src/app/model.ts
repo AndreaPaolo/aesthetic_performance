@@ -3,3 +3,10 @@ export class Schede {
   nome: string;
   descrizione: string
 }
+
+export class Esercizzi {
+  id: number;
+  nome: string;
+  descrizione: string;
+  video: string;
+}
