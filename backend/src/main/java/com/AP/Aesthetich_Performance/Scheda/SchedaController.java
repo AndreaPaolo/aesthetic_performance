@@ -7,6 +7,7 @@ import com.AP.Aesthetich_Performance.Esercizio.EsercizioRepository;
 
 import java.util.Collection;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class SchedaController {
     private final SchedaRepository schedaRepository;    
     private final EsercizioRepository esercizioRepository;
@@ -29,6 +31,11 @@ public class SchedaController {
     @GetMapping("/api/scheda")
     Iterable<Scheda> getSchede(){
         return this.schedaRepository.findAll();
+    }
+
+    @GetMapping("/api/scheda/{scheda_id}")
+    Scheda getSchedaByIdScheda(@PathVariable Long scheda_id){
+        return this.schedaRepository.findById(scheda_id).orElseThrow();
     }
     
     @PostMapping("/api/scheda")
