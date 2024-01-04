@@ -2,8 +2,6 @@ package com.AP.Aesthetich_Performance.Esercizio;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AP.Aesthetich_Performance.Scheda.Scheda;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
