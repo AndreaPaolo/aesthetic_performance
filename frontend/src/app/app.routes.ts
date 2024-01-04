@@ -43,5 +43,5 @@ export const routes: Routes = [
     //Esercizio
       { path: 'admin/esercizio', component: ViewEsercizioComponent},
       { path: 'admin/esercizio/create', component: CreateEsercizioComponent},
-      { path: 'admin/esercizio/edit/:scheda_id', component: EditEsercizioComponent},
+      { path: 'admin/esercizio/edit/:esercizio_id', component: EditEsercizioComponent},
 ];

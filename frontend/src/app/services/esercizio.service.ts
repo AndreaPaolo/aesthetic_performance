@@ -17,11 +17,16 @@ export class EsercizioService {
     this.esercizzi = new Subject<Esercizzi[]>();
   }
 
-  getSchede(): Observable<Esercizzi[]> {
+  getEsercizzi(): Observable<Esercizzi[]> {
     return this.esercizzi.asObservable();
   }
 
-  loadSchede(scheda_id: number): void{
+  loadEsercizzi(): void{
+    this.http.get<Esercizzi[]>(this._url + 'api/esercizio').subscribe(res => this.esercizzi.next(res));
+  }
+
+  // Da implementare
+  getEsercizioBySchedaId(scheda_id: number): void{
     this.http.get<Esercizzi[]>(this._url + 'api/esercizio/schedaid/' + scheda_id).subscribe(res => this.esercizzi.next(res));
   }
 

@@ -35,7 +35,6 @@ export class CreateSchedaComponent{
   ){}
 
   aggiungi(){
-    console.log(this.scheda)
     this.schedaService.aggiungiScheda(this.scheda).subscribe({
       next: () => {
         this.toastr.success('Scheda aggiunta', 'Successo!');

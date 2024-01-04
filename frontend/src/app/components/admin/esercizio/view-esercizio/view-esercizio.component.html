@@ -13,7 +13,7 @@
           </nav>
           <h1 class="text-center">Esercizzi</h1>
           <div class="text-center" style="margin-top: 10px;">
-            <button class="btn btn-success">Aggungi</button>
+            <button class="btn btn-success" (click)="aggiungiEsercizio()">Aggungi</button>
           </div>
         </div>
       </div>
@@ -24,7 +24,19 @@
 <div class="page-section">
   <div class="container">
 
-
+    <div class="row">
+      <div *ngFor="let e of esercizi" class="col-sm-4" >
+        <div class="card" style="margin-bottom: 15px;">
+          <div class="card-body">
+            <h3 class="card-title text-primary">{{e.nome}}</h3>
+            <p class="card-text">{{e.descrizione}}</p>
+            <a *ngIf="e.video" href="http://{{e.video}}" class="btn btn-link" target="_blank">Video</a>
+            <button class="btn btn-warning" style="margin-right: 1px;" (click)="modificaEsercizio(e.id)">Modifica</button>
+            <button class="btn btn-danger" (click)="eliminaEsercizio(e.id)">Elimina</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

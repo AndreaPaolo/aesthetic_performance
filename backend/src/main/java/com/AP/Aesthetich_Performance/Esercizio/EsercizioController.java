@@ -2,6 +2,9 @@ package com.AP.Aesthetich_Performance.Esercizio;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.AP.Aesthetich_Performance.Scheda.Scheda;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class EsercizioController {
     private final EsercizioRepository esercizioRepository;
 
@@ -22,9 +26,15 @@ public class EsercizioController {
     Iterable<Esercizio> getEsercizio(){
         return this.esercizioRepository.findAll();
     }
+
+    @GetMapping("/api/esercizio/{esercizio_id}")
+    Esercizio getSchedaByIdScheda(@PathVariable Long esercizio_id){
+        return this.esercizioRepository.findById(esercizio_id).orElseThrow();
+    }
     
     @PostMapping("/api/esercizio")
     Esercizio createEsercizio(@RequestBody Esercizio newEsercizio){
+        System.out.println(newEsercizio);
         return this.esercizioRepository.save(newEsercizio);
     }
 
@@ -33,6 +43,7 @@ public class EsercizioController {
         Esercizio esercizio = this.esercizioRepository.findById(esercizio_id).orElseThrow();
         esercizio.setNome(updatedEsercizio.getNome());
         esercizio.setDescrizione(updatedEsercizio.getDescrizione());
+        esercizio.setVideo(updatedEsercizio.getVideo());
         return this.esercizioRepository.save(esercizio);
     }
 

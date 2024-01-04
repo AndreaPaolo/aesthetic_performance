@@ -7,7 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import { AdminnavComponent } from "../../../navbars/adminnav/adminnav.component";
 import { AdminfooterComponent } from "../../../footers/adminfooter/adminfooter.component";
 
-
+import { EsercizioService } from '../../../../services/esercizio.service';
+import { Esercizio } from '../../../../model_body';
 
 @Component({
   selector: 'app-create-esercizio',
@@ -25,8 +26,25 @@ import { AdminfooterComponent } from "../../../footers/adminfooter/adminfooter.c
 })
 export class CreateEsercizioComponent {
 
+  esercizio: Esercizio = new Esercizio;
+
   constructor(
+    private esercizioService: EsercizioService,
     private router: Router,
     private toastr: ToastrService
   ){}
+
+  aggiungi(){
+    this.esercizioService.aggiungiEsercizio(this.esercizio).subscribe({
+      next: () => {
+        this.toastr.success('Esercizio aggiunto', 'Successo!');
+        this.router.navigate(["/admin/esercizio"])
+      },
+      error: (error) => {
+        this.toastr.error(error.message, "Attenzione", {
+          timeOut: 3000
+        });
+      }
+    });
+  }
 }
